@@ -14,8 +14,8 @@ const Hero = () => {
               Shop Now
             </Link>
           </div>
-          <div className="md:pt-22.5">
-            <img src="/img/hero.png" alt="Summer sale" />
+          <div className="md:pt-22.5 max-w-full">
+            <img src="/img/hero.png" alt="Summer sale" className="max-w-full h-auto object-contain" />
           </div>
         </div>
       </div>

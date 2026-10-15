@@ -162,9 +162,9 @@ const Header = () => {
   return (
     <nav className="sticky top-0 z-40 bg-white shadow-sm">
       <div className="container">
-        <div className="flex items-center p-4">
-          <Link href="/" aria-label="ShopHub home">
-            <img src="/img/ShopHub.png" alt="ShopHub" />
+        <div className="flex items-center p-3 sm:p-4">
+          <Link href="/" aria-label="ShopHub home" className="shrink-0">
+            <img src="/img/ShopHub.png" alt="ShopHub" className="h-6 sm:h-7 w-auto" />
           </Link>
 
           <ul className="ml-4 hidden gap-5 md:flex lg:ml-[31.52px] lg:gap-[31.19px]">
@@ -245,18 +245,20 @@ const Header = () => {
             <button
               type="button"
               onClick={() => setMenu((m) => !m)}
-              className="md:hidden cursor-pointer"
+              className="md:hidden cursor-pointer p-1 text-primary hover:text-blue"
               aria-label="Toggle menu"
               aria-expanded={menu}
             >
-              {menu ? <X size={30} /> : <Menu size={30} />}
+              {menu ? <X size={26} /> : <Menu size={26} />}
             </button>
           </div>
         </div>
 
         {menu && (
           <div className="pb-4 md:hidden">
-            <SearchBox className="mb-4 px-4" onDone={() => setMenu(false)} />
+            <div className="mb-4 px-4">
+              <SearchBox onDone={() => setMenu(false)} />
+            </div>
             <ul className="space-y-3 px-4">
               {NAV.map((n) => (
                 <li key={n.href}>

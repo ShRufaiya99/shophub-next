@@ -53,8 +53,8 @@ export default function CartPage() {
       <div className="mt-6 grid gap-8 lg:grid-cols-[1fr_360px]">
         <ul className="space-y-4">
           {cart.map((item) => (
-            <li key={item.id} className="flex gap-4 rounded-lg border border-border-btn p-4">
-              <Link href={`/product/${item.id}`} className="h-24 w-24 shrink-0 overflow-hidden rounded-lg bg-g">
+            <li key={item.id} className="flex gap-3 sm:gap-4 rounded-lg border border-border-btn p-3 sm:p-4">
+              <Link href={`/product/${item.id}`} className="h-20 w-20 sm:h-24 sm:w-24 shrink-0 overflow-hidden rounded-lg bg-g">
                 <img src={item.thumbnail} alt={item.title} className="h-full w-full object-contain" />
               </Link>
               <div className="flex min-w-0 flex-1 flex-col">

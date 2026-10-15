@@ -18,15 +18,15 @@ export default function ProductCard({ product }) {
         type="button"
         onClick={() => toggleWishlist(product)}
         aria-label={wished ? "Remove from wishlist" : "Add to wishlist"}
-        className="absolute right-6 top-6 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-white shadow cursor-pointer"
+        className="absolute right-3 top-3 sm:right-5 sm:top-5 z-10 flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-full bg-white shadow cursor-pointer"
       >
         <Heart
-          size={18}
+          size={16}
           className={wished ? "fill-red text-red" : "text-gray"}
         />
       </button>
       {hasDiscount && (
-        <span className="absolute left-6 top-6 z-10 rounded-full bg-red px-2 py-0.5 font-inter text-xs font-semibold text-white">
+        <span className="absolute left-3 top-3 sm:left-5 sm:top-5 z-10 rounded-full bg-red px-2 py-0.5 font-inter text-[11px] sm:text-xs font-semibold text-white">
           -{Math.round(product.discountPercentage)}%
         </span>
       )}
@@ -47,7 +47,7 @@ export default function ProductCard({ product }) {
 
       <div className="mt-auto flex items-center justify-between pt-3">
         <div>
-          <p className="F-p2">{money(sale)}</p>
+          <p className="F-p2 text-base sm:text-[20px]">{money(sale)}</p>
           {hasDiscount && (
             <p className="font-inter text-xs text-lightgray line-through">
               {money(product.price)}
@@ -61,7 +61,7 @@ export default function ProductCard({ product }) {
           aria-label={`Add ${product.title} to cart`}
           className="cursor-pointer transition-transform hover:scale-105 disabled:opacity-40"
         >
-          <img src="/img/shopbtn.png" alt="" className="h-10 w-10 object-contain" />
+          <img src="/img/shopbtn.png" alt="" className="h-8 w-8 sm:h-10 sm:w-10 object-contain" />
         </button>
       </div>
     </div>

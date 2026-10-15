@@ -119,7 +119,7 @@ export default function ProductDetail({ product }) {
             <div className="flex items-center rounded-lg border border-border-btn">
               <button
                 onClick={() => setQty((q) => Math.max(1, q - 1))}
-                className="p-3 text-primary hover:bg-g cursor-pointer"
+                className="p-2.5 sm:p-3 text-primary hover:bg-g cursor-pointer"
                 aria-label="Decrease quantity"
               >
                 <Minus size={16} />
@@ -127,22 +127,22 @@ export default function ProductDetail({ product }) {
               <span className="w-10 text-center font-inter font-semibold">{qty}</span>
               <button
                 onClick={() => setQty((q) => Math.min(product.stock || 99, q + 1))}
-                className="p-3 text-primary hover:bg-g cursor-pointer"
+                className="p-2.5 sm:p-3 text-primary hover:bg-g cursor-pointer"
                 aria-label="Increase quantity"
               >
                 <Plus size={16} />
               </button>
             </div>
 
-            <button className="btn-primary" disabled={outOfStock} onClick={() => addToCart(product, qty)}>
+            <button className="btn-primary flex-1 sm:flex-initial" disabled={outOfStock} onClick={() => addToCart(product, qty)}>
               <ShoppingCart size={18} /> Add to Cart
             </button>
-            <button className="btn-outline" disabled={outOfStock} onClick={buyNow}>
+            <button className="btn-outline flex-1 sm:flex-initial" disabled={outOfStock} onClick={buyNow}>
               Buy Now
             </button>
             <button
               onClick={() => toggleWishlist(product)}
-              className="flex h-10.5 w-10.5 items-center justify-center rounded-lg border border-border-btn hover:bg-g cursor-pointer"
+              className="flex h-10.5 w-10.5 shrink-0 items-center justify-center rounded-lg border border-border-btn hover:bg-g cursor-pointer"
               aria-label={wished ? "Remove from wishlist" : "Add to wishlist"}
             >
               <Heart size={20} className={wished ? "fill-red text-red" : "text-gray"} />

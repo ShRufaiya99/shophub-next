@@ -422,7 +422,18 @@ export default function ShopPage({ slug = "all" }) {
 
       <div className="mt-8 grid gap-8 lg:grid-cols-[230px_1fr] lg:gap-12">
         {/* ---------- sidebar ---------- */}
-        <aside className={`${filtersOpen ? "block" : "hidden"} lg:block`}>
+        <aside className={`${filtersOpen ? "block rounded-lg border border-border-btn p-4 bg-g mb-6 lg:border-0 lg:p-0 lg:bg-transparent lg:mb-0" : "hidden"} lg:block`}>
+          <div className="flex items-center justify-between pb-4 border-b border-border-btn mb-4 lg:hidden">
+            <span className="font-inter text-sm font-bold uppercase tracking-wide text-black">Filter Products</span>
+            <button
+              type="button"
+              onClick={() => setFiltersOpen(false)}
+              className="text-xs font-semibold text-blue uppercase tracking-wide hover:underline cursor-pointer"
+            >
+              Close ✕
+            </button>
+          </div>
+
           {anyFilter && (
             <button
               onClick={clearAll}
@@ -568,6 +579,16 @@ export default function ShopPage({ slug = "all" }) {
               <PriceRange min={bounds[0]} max={bounds[1]} value={price} onChange={setPrice} />
             </FilterSection>
           )}
+
+          <div className="mt-4 pt-4 border-t border-border-btn lg:hidden">
+            <button
+              type="button"
+              onClick={() => setFiltersOpen(false)}
+              className="btn-primary w-full text-xs font-semibold py-2.5"
+            >
+              Apply Filters ({filtered.length} products)
+            </button>
+          </div>
         </aside>
 
         {/* ---------- products ---------- */}
