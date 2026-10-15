@@ -50,8 +50,8 @@ export default function CartPage() {
         </button>
       </div>
 
-      <div className="mt-6 grid gap-8 lg:grid-cols-[1fr_360px]">
-        <ul className="space-y-4">
+      <div className="mt-6 grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,1fr)_360px]">
+        <ul className="min-w-0 space-y-4">
           {cart.map((item) => (
             <li key={item.id} className="flex gap-3 sm:gap-4 rounded-lg border border-border-btn p-3 sm:p-4">
               <Link href={`/product/${item.id}`} className="h-20 w-20 sm:h-24 sm:w-24 shrink-0 overflow-hidden rounded-lg bg-g">
