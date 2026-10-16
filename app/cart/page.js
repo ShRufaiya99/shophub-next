@@ -104,7 +104,7 @@ export default function CartPage() {
           <h3 className="font-inter text-lg font-bold text-black">Order Summary</h3>
           <dl className="mt-4 space-y-3 font-inter text-sm">
             <div className="flex justify-between">
-              <dt className="text-gray">Subtotal</dt>
+              <dt className="text-gray">Subtotal </dt>
               <dd className="font-medium text-black">{money(cartSubtotal)}</dd>
             </div>
             <div className="flex justify-between">
